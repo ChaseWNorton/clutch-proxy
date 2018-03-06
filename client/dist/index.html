@@ -14,24 +14,44 @@
     <div id="updates"></div>
     <div id="comments"></div>
 
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> -->
+    <script src="/react.development.js"></script>
+    <script src="/react-dom.development.js"></script>
     
     <!-- <script src='http://localhost:3300/bundle.js' ></script> -->
     <script src='http://localhost:3001/bundle.js' ></script>
     <!-- <script src='http://localhost:3004/bundle.js' ></script> -->
     <script>
       ReactDOM.render(
-        React.createElement(window.PledgeInfo),
+        React.createElement(PledgeInfo, {id: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
         document.getElementById('pledge-info')
       );
     </script>
     <script>
       ReactDOM.render(
-        React.createElement(window.PledgeSupport),
+        React.createElement(PledgeSupport, {id: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
         document.getElementById('pledge-support')
       );
     </script>
+    <!-- <script>
+      ReactDOM.render(
+        React.createElement(CampaignHeader, {id: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
+        document.getElementById('campaign-title')
+      );
+    </script>
+    <script>
+      ReactDOM.render(
+        React.createElement(AboutContainer, {id: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
+        document.getElementById('campaign-about')
+      );
+    </script>
+    <script>
+      ReactDOM.render(
+        React.createElement(VideoPlayer, {id: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
+        document.getElementById('campaign-video')
+      );
+    </script> -->
     
   </body>
 </html>
