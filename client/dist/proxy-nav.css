@@ -1,0 +1,52 @@
+/* ---=== both nav bars ===--- */
+nav {
+  font-weight: 100;
+  background-color: #fff;
+}
+
+.nav-element {
+  font-size: 0.9em;
+  height: 5em;
+  text-align: center;
+  padding: 2em 0;
+  margin: 0 1em;
+}
+
+.nav-element a {
+  text-decoration: none;
+  color: #282828;
+}
+
+
+/* ---=== main nav bar ===--- */
+.main-nav {
+  border-bottom: 1px solid #282828;
+}
+.nav-logo {
+  text-align: center;
+  height: 5em;
+}
+.nav-logo img {
+  margin-top: -3.75em;
+}
+.nav-left {
+  text-align: left;
+}
+.nav-left a {
+  padding-right: 2em;
+}
+.nav-right {
+  text-align: right;
+}
+.nav-right a {
+  padding-left: 2em;
+}
+
+/* --=== sub nav bar ===--- */
+.sub-nav {
+  border-top: 1px solid #dcdedd;
+  border-bottom: 1px solid #dcdedd;
+  height: 5em;
+  font-weight: 100;
+  background-color: #fff;
+}

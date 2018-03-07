@@ -1,12 +1,10 @@
-h1 {
-    color: blue;
+.navbar {
+  height: 15em;
 }
 
-p {
-    color: red;
-}
-
-button {
-    color: green;
+.nav-left, .logo, .nav-right {
+  height: 5em;
+  border: 1px solid black;
+  display: inline-block;
 }
 
