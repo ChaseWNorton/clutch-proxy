@@ -1,8 +1,10 @@
 body {
   background-color: #fbfbfa;
 }
+
 .secondary-container {
   background-color: #fff;
+  padding-top: 1.5em;
 }
 
 .campaign-title-container {
