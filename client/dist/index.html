@@ -3,14 +3,90 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/56195776e3.js"></script>
+    <link rel="stylesheet" type="text/css" href="./proxy-nav.css">
+    <link rel="stylesheet" type="text/css" href="./main.css">
     <title></title>
   </head>
   <body>
-    <div id="campaign-title"></div>
-    <div id="campaign-video"></div>
-    <div id="campaign-about"></div>
-    <div id="pledge-info"></div>
-    <div id="pledge-support"></div>
+    <div class='container-fluid main-nav'>
+      <nav class="row justify-content-center">
+        <div class='nav-left nav-element col-3'>
+          <a href="#">Explore</a>
+          <a href="#">Start a project</a>
+        </div>
+        <div class='nav-logo col-5'>
+          <img src='images/Double_Clutch01.png' width='320' height='200'>
+        </div>
+        <div class='nav-right nav-element col-3'>
+            <a href="#">Search <i class="fa fa-search"></i></a>
+            <a href="#">Sign in</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class='container main-container'>
+      <div class='campaign-title-container container'>
+          <div id="campaign-title"></div>
+      </div>
+      <div class='primary-container row'>
+        <div class='campaign-video-container col-8'>
+            <div id="campaign-video"></div>
+        </div>
+        <div class='pledge-info-container col-4'>
+          <div id="pledge-info"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class='container-fluid sub-nav'>
+      <div class='container sub-nav-links'>
+        <nav class="row justify-content-start">
+          <div id='camp-btn' class='nav-element col-1'>
+            <p>Campaign</p>
+          </div>
+          <div class='nav-element col-1'>
+            <p>FAQ</p>
+          </div>
+          <div id='updates-btn' class='nav-element col-1'>
+            <p>Updates</p>
+          </div>
+          <div id='comments-btn' class='nav-element col-1'>
+            <p>Comments</p>
+          </div>
+          <div class='nav-element col-1'>
+            <p>Community</p>
+          </div>
+        </nav>
+      </div>
+    </div>
+ 
+    <div class='container-fluid secondary-container'>
+      <div class='container'>
+        <div class='secondary-container row'>
+          <div class='campaign-about-container col-8'>
+            <div id="campaign-about"></div>
+          </div>
+          <div class='pledge-support-container col-4'>
+            <div id="pledge-support"></div>
+          </div>
+          <div id="updates"></div>
+          <div id="comments"></div>  
+        </div>
+      </div>
+    </div>
+    
+    <div class='campaign-video-container col-8'>
+      <div id="campaign-about"></div>
+    </div>
+    <div class='pledge-info-container col-4'>
+      <div id="pledge-support"></div>
+    </div>
     <div id="updates"></div>
     <div id="comments"></div>
 
@@ -20,8 +96,11 @@
     <script src="/react-dom.development.js"></script>
     
     <!-- <script src='http://localhost:3300/bundle.js' ></script> -->
+    <script src="http://127.0.0.1:3300/bundle.js"></script>
     <script src='http://localhost:3001/bundle.js' ></script>
-    <!-- <script src='http://localhost:3004/bundle.js' ></script> -->
+    <script src='http://localhost:3003/index_bundle.js' ></script>
+    <script src='http://localhost:3004/bundle.js' ></script>
+      <!-- Pledge -->
     <script>
       ReactDOM.render(
         React.createElement(PledgeInfo, {id: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
@@ -34,24 +113,43 @@
         document.getElementById('pledge-support')
       );
     </script>
-    <!-- <script>
+
+    <!-- Campaign  -->
+    <script>
       ReactDOM.render(
-        React.createElement(CampaignHeader, {id: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
+        React.createElement(CampaignHeader, {idFromURL: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
         document.getElementById('campaign-title')
       );
     </script>
     <script>
       ReactDOM.render(
-        React.createElement(AboutContainer, {id: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
+        React.createElement(AboutContainer, {idFromURL: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
         document.getElementById('campaign-about')
       );
     </script>
     <script>
       ReactDOM.render(
-        React.createElement(VideoPlayer, {id: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
+        React.createElement(VideoPlayer, {idFromURL: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
         document.getElementById('campaign-video')
       );
-    </script> -->
+    </script>
+
+    <!-- Comments -->
+    <script>
+      ReactDOM.render(
+        React.createElement(Comments, {id: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
+        document.getElementById('comments')
+      );
+    </script>
+
+    <!-- Updates -->
+    <script>
+      ReactDOM.render(
+        React.createElement(Updates, {ID: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
+        document.getElementById('updates')
+      );
+    </script>
     
+    <script src="/proxy.js"></script>
   </body>
 </html>
