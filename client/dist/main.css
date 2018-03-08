@@ -1,10 +1,14 @@
 body {
   background-color: #fbfbfa;
 }
-/* .main-container {
-  background-color: #fbfbfa;
-} */
+.secondary-container {
+  background-color: #fff;
+}
 
 .campaign-title-container {
   padding-top: 3em;
+}
+
+.hide-div {
+  display: none;
 }

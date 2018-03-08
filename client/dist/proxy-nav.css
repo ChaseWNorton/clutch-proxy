@@ -10,6 +10,7 @@ nav {
   text-align: center;
   padding: 2em 0;
   margin: 0 1em;
+  cursor: pointer;
 }
 
 .nav-element a {
@@ -17,6 +18,9 @@ nav {
   color: #282828;
 }
 
+.nav-element p {
+  color: #282828;
+}
 
 /* ---=== main nav bar ===--- */
 .main-nav {
@@ -49,4 +53,7 @@ nav {
   height: 5em;
   font-weight: 100;
   background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 3;
 }

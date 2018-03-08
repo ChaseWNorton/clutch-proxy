@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./proxy-nav.css">
     <link rel="stylesheet" type="text/css" href="./main.css">
     <title></title>
@@ -28,7 +29,6 @@
       </nav>
     </div>
 
-
     <div class='container main-container'>
       <div class='campaign-title-container container'>
           <div id="campaign-title"></div>
@@ -46,39 +46,44 @@
     <div class='container-fluid sub-nav'>
       <div class='container'>
         <nav class="sub-nav-links row justify-content-start">
-          <div class='nav-element col-1'>
-            <a href="#">Campaign</a>
+          <div id='camp-btn' class='nav-element col-1'>
+            <p>Campaign</p>
           </div>
           <div class='nav-element col-1'>
-            <a href="#">FAQ</a>
+            <p>FAQ</p>
+          </div>
+          <div id='updates-btn' class='nav-element col-1'>
+            <p>Updates</p>
+          </div>
+          <div id='comments-btn' class='nav-element col-1'>
+            <p>Comments</p>
           </div>
           <div class='nav-element col-1'>
-            <a href="#">Updates</a>
-          </div>
-          <div class='nav-element col-1'>
-            <a href="#">Comments</a>
-          </div>
-          <div class='nav-element col-1'>
-            <a href="#">Community</a>
+            <p>Community</p>
           </div>
         </nav>
       </div>
     </div>
  
-    <div class='container'>
+    <div class='container-fluid secondary-container'>
       <div class='secondary-container row'>
-          <div class='campaign-video-container col-8'>
-              <div id="campaign-about"></div>
-          </div>
-          <div class='pledge-info-container col-4'>
-            <div id="pledge-support"></div>
-          </div>
+        <div class='campaign-about-container col-8'>
+          <div id="campaign-about"></div>
         </div>
+        <div class='pledge-support-container col-4'>
+          <div id="pledge-support"></div>
+        </div>
+        <div id="updates"></div>
+        <div id="comments"></div>  
+      </div>
     </div>
-      
-
     
-    
+    <div class='campaign-video-container col-8'>
+      <div id="campaign-about"></div>
+    </div>
+    <div class='pledge-info-container col-4'>
+      <div id="pledge-support"></div>
+    </div>
     <div id="updates"></div>
     <div id="comments"></div>
 
@@ -142,5 +147,6 @@
       );
     </script>
     
+    <script src="/proxy.js"></script>
   </body>
 </html>
