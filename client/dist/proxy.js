@@ -10,6 +10,10 @@ $campaignBtn.on('click', (event) => {
   $('.pledge-support-container').removeClass('hide-div');
   $('#comments').addClass('hide-div');
   $('#updates').addClass('hide-div');
+
+  $campaignBtn.addClass('selected');
+  $updatesBtn.removeClass('selected');
+  $commentsBtn.removeClass('selected');
 });
 
 const $updatesBtn = $('#updates-btn')
@@ -18,6 +22,10 @@ $updatesBtn.on('click', (event) => {
   $('#comments').addClass('hide-div');
   $('.campaign-about-container').addClass('hide-div');
   $('.pledge-support-container').addClass('hide-div');
+
+  $updatesBtn.addClass('selected');
+  $campaignBtn.removeClass('selected');
+  $commentsBtn.removeClass('selected');
 });
 
 $('#updates').addClass('hide-div');
@@ -28,6 +36,10 @@ $commentsBtn.on('click', (event) => {
   $('#updates').addClass('hide-div');
   $('.campaign-about-container').addClass('hide-div');
   $('.pledge-support-container').addClass('hide-div');
+
+  $commentsBtn.addClass('selected');
+  $campaignBtn.removeClass('selected');
+  $updatesBtn.removeClass('selected');
 });
 
 $('#comments').addClass('hide-div');
