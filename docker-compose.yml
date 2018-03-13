@@ -1,0 +1,40 @@
+version: '2'
+
+services:
+  proxy: 
+    image: james9446/proxy
+    ports:
+      - '3000:3000'
+
+  pledge:
+    image: james9446/pledge
+    depends_on:
+      - 'database'
+    ports: 
+      - '3001:3001'
+
+  campaign:
+    image: chazie9/campaign
+    depends_on:
+      - 'database'
+    ports: 
+      - '3300:3300'
+
+  updates:
+    image: chasewnorton/updates
+    depends_on:
+      - 'database'
+    ports: 
+      - '3003:3003'
+
+  comments:
+    image: openmichael/comments
+    depends_on:
+      - 'database'
+    environment:
+      - DBURL=mongodb://database/comments
+    ports: 
+      - '3004:3004'
+
+  database:
+    image: mongo:latest
